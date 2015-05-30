@@ -1,0 +1,222 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{ae, aecompl}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{enumitem}
+
+\usepackage{fancyhdr} % Custom headers and footers
+
+%opening
+\title{8.3 More Integral Theorems}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Exercices de la secion 8.3 des théorèmes se rapportant à l'intégrale de Riemann dérivés à l'aide du critère d'intégrabilité de Lebesgue.
+\end{abstract}
+
+\section*{8-16}
+\begin{enumerate}
+  \item $f,g : [a,b] \rightarrow \mathbb{R}$ une fonction riemann
+  \item $\exists \epsilon > 0 \text{ tel que } |g(x)| > \epsilon \text{ pour tout } x \in [a,b]$
+\end{enumerate}
+
+\subsection*{(a)}
+$\diamond$  $\text{(1) } \dfrac{f}{g} \textbf{ est riemann}$
+\\
+\\
+Puisque $g$ n'est jamais nulle sur $[a,b]$, on a que $\dfrac{1}{g} (x)$ est bien définie sur $[a,b]$. 
+\\
+\\
+Or, $\dfrac{1}{g}$ est continue pp puisque $g$ est continue pp ($\textbf{[1] + \textbf{thm 8.12}}$).
+\\
+\\
+On applique alors la partie 1 du $\textbf{thm 8.14}$.
+
+\subsection*{(b)}
+$\diamond$ $|f| \textbf{ est riemann et } \left|\int_a^b f(x)dx \right| \leq \int_a^b |f(x)| dx$
+\\
+\\
+Puisque $|x|$ est continue sur $\mathbb{R}$ et $f$ est continue pp sur $[a,b]$, $|f|$ est continue pp sur $[a,b]$ car si
+$f$ est continue en $x$, alors $|f|$ le sera aussi ($\textbf{thm 3.30}$). Donc $|f|$ est riemann ($\textbf{thm 8.12}$).
+\\
+\\
+Par le $\textbf{lemme 5.6}$, puisque $f$ est riemann, alors pour toutes suites de partition $\{P_k\}$ telle que 
+$\lim\limits_{n \to \infty} || P_k || = 0$ avec suite d'ensemble d'évaluation $\{T_k\}$ correspondant, on a 
+$\lim\limits_{k \to \infty} R(f, P_k, T_k) = \int_a^b f$.
+\\
+\\
+Par $\textbf{2-12}$, puisque la limite des sommes de riemann existe, on a $\left|\int_a^b f\right| = 
+\left|\lim\limits_{k \to \infty} R(f, P_k, T_k)\right|
+= \lim\limits_{k \to \infty} \left| R(f, P_k, T_k) \right|$.
+\\
+\\
+On déduit
+\begin{align*}
+  & \lim\limits_{k \to \infty} \left| R(f, P_k, T_k) \right| \\
+  = \\
+  & \lim\limits_{k \to \infty} \left| \sum_{i = 1}^{n_k} f(x_{k,i}) \Delta x_{k,i} \right| \\
+  \leq \\
+  & \lim\limits_{k \to \infty} \sum_{i = 1}^{n_k} |f(x_{k,i})| \Delta x_{k,i} \\
+  = \\
+  & \lim\limits_{k \to \infty} R(|f|, P_k, T_k) \\
+  = \\
+  & \int_a^b |f|
+\end{align*}
+où la dernière égalité est une autre application du $\textbf{lemme 5.6}$.
+\\
+\\
+On peut terminer la preuve en considérant n'importe quelle partition donc la norme tend vers 0 et considérer sa 
+somme supérieure ou inférieure.
+
+\subsection*{(c)}
+$\diamond$ Dans le but d'illustrer l'utilité du critère d'intégrabilité de Lebesgue, démontrez l'intégrabilité de 
+$|f|$ sur $[a,b]$ à l'aide du critère de Riemann ($\textbf{thm 5.25}$).
+\\
+\\
+Puisque $f$ est riemann, pour tout $\epsilon > 0$ il existe $P$ une partition
+de $[a,b]$ tel que $U(f,P) - L(f,P) < \epsilon$ ($\textbf{thm 5.25}$).
+\\
+\\
+Alors 
+\begin{align*}
+  & U(|f|,P) - L(|f|,P) \\
+  = \\
+  & \sum_{i = 1}^n M_i \Delta x_i - \sum_{i = 1}^n m_i \Delta x_i \\
+  = \\
+  & \sum_{i = 1}^n (M_i - m_i) \Delta x_i
+\end{align*}
+où $M_i = \sup\{|f(x)| : x \in [x_{i-1}, x_i]\}$ et $m_i = \inf\{|f(x)| : x \in [x_{i-1}, x_i]\}$.
+\\
+\\
+Soit $S_i:=\sup\{f(x) : x \in [x_{i-1}, x_i]\}$ et $L_i := \inf\{f(x) : x \in [x_{i-1}, x_i]\}$.
+\\
+\\
+On a alors quelques cas. Si $S_i \geq 0$ et $L_i \geq 0$, alors $M_i = S_i$ et $m_i = L_i$ car 
+$|f|([x_{i-1}, x_i]) = f([x_{i-1},x_i])$ et donc $S_i - L_i = M_i - m_i$.
+\\
+\\
+Si $S_i \geq 0$ et $L_i < 0$, alors $M_i = \max\{|S_i|, |L_i|\}$ et $m_i \geq 0$. 
+\\
+\\
+Si $S_i > |L_i|$, alors c'est que $S_i > 0$. SPDG, on ne considérera que des $x$ tel que $f(x) > 0$. 
+Supposons alors $L < S_i$ tel que $L$ soit le supremum.On pose $\alpha := S_i - L$. 
+Alors il existe $x \in [x_{i-1}, x_i]$ tel que $S_i - f(x) < \alpha = S_i - L$.
+Alors $f(x) > L$ et donc $L$ ne peut pas être le supremum. En particulier $|L_i|$.
+\\
+\\
+Si $|L_i| > S_i$. Supposons $L < |L_i|$ le supremum. On pose $\alpha := |L_i| - L$. 
+Puisque $L_i$ est l'infimum de $\{f(x) : x \in [x_{i-1}, x_i]\}$, il existe $x$ tel que 
+$f(x) - L_i < \alpha = |L_i| - L = -L_i - L$. Alors $f(x) < -L$. SPDG, $f(x) < 0$. Alors $|f(x)| > L$
+et donc $L$ ne peut pas être le supremum. À plus forte raison $S_i$.
+\\
+\\
+Si alors $M_i = S_i$, alors $S_i - L_i \geq S_i$ car $-L_i > 0$. Si $M_i = |L_i|$, alors
+$S_i - L_i = S_i + |L_i| = M_i + S_i \geq M_i - m_i$ car $m_i \geq 0$.
+\\
+\\
+Si $S_i < 0$ et $L_i < 0$, alors $M_i = |L_i|$ et $m_i = |S_i|$. Car alors $|f|([x_{i-1}, x_i]) = -f([x_{i-1}, x_i])$ et donc
+$sup(|f|([x_{i-1}, x_i])) = -inf(f([x_{i-1}, x_i])) = |L_i|$ et analoguement pour l'infimum.
+\\
+\\
+Alors $M_i - m_i = |L_i| - |S_i| = -L_i - (-S_i) = S_i - L_i$.
+\\
+\\
+On conclut 
+\begin{align*}
+ & \sum_{i = 1}^n (M_i - m_i) \Delta x_i \\
+ \leq \\
+ & \sum_{i = 1}^n (S_i - L_i) \Delta x_i \\
+ = \\
+ & U(f,P) - L(f,P) < \epsilon
+\end{align*}
+Ainsi $U(|f|,P) - L(|f|,P) \leq U(f,P) - L(f,P) < \epsilon$.
+
+\section*{8-17}
+\begin{enumerate}
+ \item $f : [a,b] \rightarrow \mathbb{R}$
+ \item $m \in (a,b)$
+\end{enumerate}
+$\diamond$ $f \textbf{ est riemann sur } [a,b] \textbf{ ssi f est riemann sur } [a,m] \textbf{ et sur } [m,b] \textbf{ et alors }$
+\begin{align*}
+ \int_a^b f = \int_a^m f + \int_m^b f
+\end{align*}
+\subsection*{($\Rightarrow$)}
+Supposons $f$ riemann sur $[a,b]$. Alors $f$ est continue pp sur $[a,b]$ ($\textbf{thm 8.12}$) et donc continue pp sur 
+$[a,m]$ et sur $[m,b]$ et donc riemann sur chacun de ces intervalles ($\textbf{thm 8.12}$). 
+\\
+\\
+Puisque $f$ est riemann sur chacun des intervalles $[a,m]$ et $[m,b]$ alors pour toutes suites de partitions $\{P_k\}$ de 
+$[a,m]$, $\{D_k\}$ de $[m,b]$ on a 
+\begin{align*}
+  & \lim\limits_{k \to \infty} R(f, P_k, T_k) = \int_a^m f \\
+  & \lim\limits_{k \to \infty} R(f, D_k, T_k^*) = \int_m^b f
+\end{align*}
+Alors 
+\begin{align*}
+ & R(f, P_k, T_k) + R(f, D_k, T_k^*) \\
+ = \\
+ & \sum_{i = 1}^n f(t_i) \Delta x_i + \sum_{i = 1}^m f(t_i^*) \Delta x_i \\
+ = \\
+ & \sum_{i = 1}^n f(t_i) \Delta x_i + \sum_{i = n}^{n+m} f(t_{n+i}^*) \Delta x_{n+i} \\
+ = \\
+ & \sum_{i = 1}^{n+m} f(t_i) \Delta x_i \\
+ = \\
+ & R(f, P_k \cup D_k, T_k \cup T_k^*)
+\end{align*}
+car $P_k \cup D_k$ forme une partition de $[a,b]$ où $P_k$ termine en $m$ et $D_k$ y débute. De plus, il est clair
+que $\lim\limits_{k \to \infty} || P_k \cup D_k || = 0$.
+\\
+\\
+Puisque $f$ est riemann sur $[a,b]$, on applique à répétition le $\textbf{lemme 5.6}$ pour obtenir
+\begin{align*}
+ & \int_a^m f + \int_m^b f \\
+ = \\
+ &  \lim\limits_{k \to \infty} R(f, P_k, T_k) + \lim\limits_{k \to \infty} R(f, D_k, T_k^*) \\
+ = \\
+ & \lim\limits_{k \to \infty}(R(f, P_k, T_k) + R(f, D_k, T_k^*)) \\
+ = \\
+ & \lim\limits_{k \to \infty} R(f, P_k \cup D_k, T_k \cup T_k^*) \\
+ = \\
+ & \int_a^b f
+\end{align*}
+
+\subsection*{($\Leftarrow$)}
+Supposons $f$ intégrable sur $[a,m]$ et sur $[m,b]$. Alors $f$ est continue pp sur chacun de ces intervalles considérés
+individuellement.
+\\
+\\
+Soit alors $x \in [a,b]$ tel que $f : [a,b]$ est discontinue. Alors $x \in [a,m]$ ou $x \in [m,b]$. SPDG, $x \in [a,m]$.
+Alors $f(x) = f|_{[a,m]}(x)$. Mais alors $f|_{[a,m]}(x)$ doit être discontinue, car sinon $f(x)$ serait continue. Donc 
+les points de discontinuité de $f$ forment un sous-ensemble des points de discontinuité de $f|_{[a,m]}$ et de $f|_{[m,b]}$. 
+Or la mesure de l'union de ces ensembles est nulle, car la mesure de chacun d'entre eux l'est également,
+donc $f$ est continue pp sur $[a,b]$ donc riemann sur $[a,b]$ ($\textbf{thm 8.12}$). 
+\\
+\\
+Alors, en appliquant le $\textbf{lemme 5.6}$ pour $f|_{[a,m]}$ et $f|_{[m,b]}$, on effectue un raisonnement similaire à celui
+fait plus haut.
+
+\section*{8-18}
+\begin{enumerate}
+ \item $f$ Riemann sur $[a,b]$
+ \item $x_0 \in [a,b]$
+ \item $G(x) := \int_{x_0}^x f(t) dt$
+\end{enumerate}
+$\diamond$ $G(x)$ \textbf{est uniformément continue sur } $[a,b]$
+\\
+$\diamond$ \textbf{Si } $f$ \textbf{est continue en} $x \in (a,b)$ \textbf{alors} $\dfrac{d}{dx} \left( \int_{x_0}^x f(t) dt \right) = f(x) $
+\\
+\\
+On a que
+\begin{align*}
+ \int_a^x f = \int_a^{x_0} f + \int_{x_0}^x f
+\end{align*}
+et donc $G(x) = \int_a^x f - \int_a^{x_0} f$. Or, le premier terme de cette différence est uniformément continue (\textbf{thm 8.17}) 
+et le deuxième, étant une constante, l'est également. Donc $G(x)$ est une différence de fonctions continues sur $[a,b]$. Elle est donc
+continue sur $[a,b]$ () et donc uniformément continue sur cet interval.
+
+
+\end{document}
