@@ -1,2 +1,2 @@
 # active-reader
-Solved exercices on my textbook reading list. They feels wasted otherwise. 
+Solved exercices on my textbook reading list, undergraduate stuff. They feels wasted otherwise. 
