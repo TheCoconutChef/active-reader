@@ -8,6 +8,7 @@
 *.bbl
 *.bcf
 *.bckp
+*.backup
 *.blg
 *.dvi
 *.fdb_latexmk
