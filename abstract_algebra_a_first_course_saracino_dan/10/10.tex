@@ -104,5 +104,97 @@ L'argument est le même dans le cas où la cardinalité serait 39. Donc la cardi
 
 \section*{10.10}
 $\diamond$ \textbf{Donnez une autre preuve du théorème de Lagrange.}
+\\
+\\
+Soit $H := \{h_1, h_2, \cdots h_k\}$ un sous-groupe de $G$ où $|G| = n$. On pose $n = dk + r$.
+\\
+\\
+On considère le sous-groupe $aH$ pour $a \not \in H$. Alors $aH$ comprends $k$ éléments distincts. 
+Il rest alors $d(k-1) + r$ éléments desquels choisir. Soit alors $b \not \in aH$. Alors il s'agit d'un autre
+coset possédant $k$ éléments dinstincts. De plus, tous ses éléments sont distincts de $aH$.
+\\
+\\
+Car sinon, $bh_i = ah_j$. Alors $bh_i h_j^{-1} = a \in bH$, car $h_i h_j \in H$. Mais alors $aH = b h_i h_j^{-1} H = bH$. Donc $b \in aH$, ce qui est absurde.
+\\
+\\
+Répétant la procédure $k$ fois, il reste finalement $r$ éléments disponible n'appartenant à aucun des cosets précédemment construit. 
+\\
+\\
+Soit alors $cH$ un coset formé à partir de ces $r$ éléments. Alors, nécessairement, $cH$ possède $k$ éléments distincts où $k > r$. Alors 
+$cH$ doit avoir $k-r$ éléments appartenant à au moins un autre coset, disons $vH$. Mais alors $cH = vH$ par un argument similaire à 
+celui présenté plus haut. Alors $c$ était déjà dans un coset, ce qui est absurde.
+\\
+\\
+Donc $r = 0$ et donc $n = dk$, ie. $|H|$ divise $|G|$.
+
+\section*{10.13}
+\begin{enumerate}
+ \item $G$ un groupe
+ \item $H$ un sous-groupe
+ \item $\phi(Ha) = aH$
+\end{enumerate}
+$\diamond$ \textbf{Montrez que $f$ n'est pas nécessairement bien définie.}
+\\
+\\
+On pose $G = S_3$, $H = <g>$ et alors $<g>gf = <g>f$ mais $gf<g> \not = f<g>$.
+
+\section*{10.14}
+\subsection*{b)}
+\begin{enumerate}
+ \item $G$ un groupe d'ordre 6
+ \item $G$ pas cyclique
+\end{enumerate}
+$\diamond$ \textbf{$G$ doit contenir des éléments d'ordre 1,2,3 et au moins un de 3}
+\\
+\\
+Car l'ordre des sous-groupes cycliques de $G$ doit diviser l'ordre de $G$. Or, les seules diviseurs de 6 inférieurs
+à 6 sont 1,2,3. 
+\\
+\\
+Puisque tous les éléments ne peuvent pas avoir ordre 1, il doit au moins y avoir un éléments d'ordre 2. Mais puisque les 4 éléments restant ne
+peuvent pas tous être d'ordre 1, on suppose un deuxième élément d'ordre 2. Soit $b,c$ ces éléments. Alors $b \not = c$ et donc $o(bc) \not = 1$.
+\\
+\\
+Supposons $o(bc) = 2$. Alors $<bc>, b<bc> et c<bc>$ sont trois cosets disjoints deux à deux. Or, $b<bc>, c<bc>$ ne sont pas disjoints. 
+\\
+\\
+Donc $bc$ doit être d'ordre 3. 
+\subsection*{c)}
+\begin{enumerate}
+ \item $a$ un élément d'ordre 3
+ \item $b \not \in <a>$
+\end{enumerate}
+$\diamond$ \textbf{$e,a,a^2,b,ab,a^2b$ décrit complètement $G$}
+\\
+\\
+Car il existe deux cosets distincts de $<a>$, notamment $<a>$ et $<a>b$.
+\\
+\\
+Or $<a> = \{e,a,a^2\}$ et $<a>b = \{b,ab,a^2 b\}$.
+
+\subsection*{d)}
+\begin{enumerate}
+ \item Même que $b$
+\end{enumerate}
+$\diamond$ \textbf{$o(b) = o(ab) = o(a^2 b) = 2$}
+\\
+\\
+Puisque les cosets exhibés ci-haut sont tous les éléments de $G$, on a que $b^2$ doit être dans l'un d'eux.
+\\
+\\
+Or, $b^2 \not = b$. De plus, $b^2 = ab \Rightarrow b = a$ et $b^2 = a^2 b \Rightarrow b = a^2$. Or, $b \not \in <a>$.
+\\
+\\
+Donc $b^2$ n'est pas dans $<a>b$ et n'est pas $a,a^2$. Alors $b^2 = e$. Mais de même $ab, a^2b$ ne sont pas dans $<a>$, la 
+seule hypothèse dont nous disposions par rapport à $b$. Donc par le même raisonnement, ils sont également d'ordre 2.
+
+\subsection*{e)}
+$\diamond$ \textbf{$ba = a^2 b$ et $ba^2 = ab$}
+\\
+\\
+Car $a^2 b = (a^2 b)^{-1} = b^{-1}a^{-2} = ba$, puisque $a^2 b$ est d'ordre 2. 
+\\
+\\
+De même, $ab = (ab)^{-1} = b^{-1}a^{-1} = ba^2$.
 \end{document}
 
