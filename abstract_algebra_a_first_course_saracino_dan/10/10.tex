@@ -196,5 +196,23 @@ Car $a^2 b = (a^2 b)^{-1} = b^{-1}a^{-2} = ba$, puisque $a^2 b$ est d'ordre 2.
 \\
 \\
 De même, $ab = (ab)^{-1} = b^{-1}a^{-1} = ba^2$.
+
+\section*{10.17}
+\begin{enumerate}
+ \item $p$ premier
+\end{enumerate}
+$\diamond$ \textbf{La multiplication sur $G := \mathbb{Z}_p - \{0\}$ est associative}
+\\
+\\
+Premièrement, on a que l'opération de composition sur $\mathbb{Z}_p = \{0\}$ est bien définie. Car, pour chaque $x \in G$, sa factorisation
+première ne comprends pas $p$, puisque $x < p$. Alors pour tout $y \in G$, $xy$ n'est pas divisible par $p$ et donc $xy \in G$.
+\\
+\\
+Pour $x,y,z \in G$, on pose $xyz = dp + r$, $xy = np + r_1$ et $yz = mp + r_2$. On a $(xy)z = npz + z r_1 = dp + r$ et donc
+$(npz + z r_1) \mod{p} = (dp + r) \mod{p}$, d'où il suit que $z r_1 = r$. De la même manière, $x r_2 = r$ et donc $x r_2 = z r_1$. Donc
+$(x r_2) \mod{p} = x \odot r_2 = (z r_1) \mod{p} = z \odot r_1$. 
+\\
+\\
+Ainsi, $(x \odot y) \odot z = r_1 \odot z = x \odot r_2 = x \odot (y \odot z)$.
 \end{document}
 
