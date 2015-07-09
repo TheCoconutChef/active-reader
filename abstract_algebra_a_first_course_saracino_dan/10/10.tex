@@ -214,5 +214,52 @@ $(x r_2) \mod{p} = x \odot r_2 = (z r_1) \mod{p} = z \odot r_1$.
 \\
 \\
 Ainsi, $(x \odot y) \odot z = r_1 \odot z = x \odot r_2 = x \odot (y \odot z)$.
+
+\section*{10.18}
+\begin{enumerate}
+ \item $S_m := \{a : (a,m) = 1\}$
+ \item $\phi(m) := |S_m|$
+ \item $G := (S_m, \odot)$ où $\odot$ est la multiplication $\mod{m}$
+\end{enumerate}
+$\diamond$ \textbf{$\forall m \in \mathbb{N}^*$ $\forall a \in S_m$ $a^{\phi(m)} \equiv 1 \mod{m}$}
+\\
+\\
+Premièrement, le groupe est bien définie car $m$ ne sera jamais diviseur de $ab$ pour tout $a,b \in S_m$. 
+\\
+\\
+Soit alors $a \in G$ et donc dans $S_m$. Alors $a^{\phi(m)} = 1$ (\textbf{thm. 10.4}).
+\\
+\\
+Donc $a^{\phi(m)} - 1 = 0 \Leftrightarrow a^{\phi(m)} (\bmod p) - 1 (\bmod p) = 0 \Leftrightarrow (a^{\phi{m}} - 1) \bmod p = 0$.
+\\
+\\
+Mais alors $p | (a^{\phi(m)} - 1)$, ce qu'il fallait démontrer.
+
+\section*{10.19 (Théorème de Wilson)}
+\begin{enumerate}
+ \item $p$ premier
+ \item $G := (\mathbb{Z}_p - \{0\}, \odot)$
+\end{enumerate}
+\subsection*{a)}
+$\diamond$ \textbf{$(p-1)! \equiv -1 (\bmod p)$}
+\\
+\\
+On a que $(p-1)^2 = (p(p-2) + 1)\bmod p = 1$ et donc $(p-1)$ est son propre inverse. Mais il s'agit du seul nombre de forme
+$(p-i)$ $1 \leq i \leq p-1$ qui soit sont propre inverse, car $(p-i)^2 = i$, et donc $i$ doit être identique à 1 pour pouvoir l'être.
+\\
+\\
+Il suit de là que, puisque nous sommes en présence d'un groupe, chaque inverse de $(p-i)$ $ 1 < i \leq p-1$ doit être dans l'expression
+$(p-2)!$. Or, $G$ est abelien. Donc $(p-2)! = 1$. 
+\\
+\\
+Puisque l'opération de composition sur $G$ est associative (\textbf{ex. 10.17}), on a que $(p-1) \odot (p-2) \odot \cdots \odot 2 = [(p-1)\bmod p][(p-2)! \bmod p] = (p-1) \bmod p$. 
+\\
+\\
+Ainsi $(p-1)! \bmod p = (p \bmod p) + (-1 \bmod p) $ et donc $((p-1)! + 1) \bmod p = 0$, c'est dire $(p-1)! \equiv -1 \bmod p$.
+\subsection*{b)}
+$\diamond$ \textbf{$n \geq 2$ et $(n-1)! \equiv -1 \bmod n$ alors $n$ est premier}
+\\
+\\
+On veut montrer que, dans ce cas, $\phi(n) = n-1$. On pose $G := (S_m, \odot)$.
 \end{document}
 
