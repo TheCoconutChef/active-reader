@@ -249,7 +249,7 @@ $(p-i)$ $1 \leq i \leq p-1$ qui soit sont propre inverse, car $(p-i)^2 = i$, et 
 \\
 \\
 Il suit de là que, puisque nous sommes en présence d'un groupe, chaque inverse de $(p-i)$ $ 1 < i \leq p-1$ doit être dans l'expression
-$(p-2)!$. Or, $G$ est abelien. Donc $(p-2)! = 1$. 
+$(p-2)!$. Or, $G$ est abelien. Donc $(p-2)! = 1$ (\textbf{Car le nombre de terme dans $(p-2)!$ est pair si on exclu le 1}). 
 \\
 \\
 Puisque l'opération de composition sur $G$ est associative (\textbf{ex. 10.17}), on a que $(p-1) \odot (p-2) \odot \cdots \odot 2 = [(p-1)\bmod p][(p-2)! \bmod p] = (p-1) \bmod p$. 
@@ -260,6 +260,16 @@ Ainsi $(p-1)! \bmod p = (p \bmod p) + (-1 \bmod p) $ et donc $((p-1)! + 1) \bmod
 $\diamond$ \textbf{$n \geq 2$ et $(n-1)! \equiv -1 \bmod n$ alors $n$ est premier}
 \\
 \\
-On veut montrer que, dans ce cas, $\phi(n) = n-1$. On pose $G := (S_m, \odot)$.
+Supposons que $n$ ne soit pas premier. Alors il existe $1 < i,j < n$ tel que $(n-i)(n-j) = n$. Or, on a que 
+$(n-1)! \bmod n = 1$. Mais $(n-1)!$ est divisible par $n$ puisque $(n-i)(n-j) = n$. Alors $(n-1)! \bmod n = 0 = 1$, une contradiction.
+Donc $n$ est premier. 
+
+\section*{10.20 (Double cosets)}
+\begin{enumerate}
+ \item $G$ un groupe et $H,K$ sous-groupes de $G$
+ \item $HgK := \{hgk : h \in H \text{ et } k \in K\}$
+\end{enumerate}
+$\diamond$ \textbf{$HgK$ est l'union d'exactement $[H: xHx^{-1}]$ cosets gauches de $K$}
+
 \end{document}
 
