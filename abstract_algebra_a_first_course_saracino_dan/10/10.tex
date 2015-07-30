@@ -264,12 +264,257 @@ Supposons que $n$ ne soit pas premier. Alors il existe $1 < i,j < n$ tel que $(n
 $(n-1)! \bmod n = 1$. Mais $(n-1)!$ est divisible par $n$ puisque $(n-i)(n-j) = n$. Alors $(n-1)! \bmod n = 0 = 1$, une contradiction.
 Donc $n$ est premier. 
 
-\section*{10.20 (Double cosets)}
+\section*{10.20 : Double cosets}
 \begin{enumerate}
  \item $G$ un groupe et $H,K$ sous-groupes de $G$
  \item $HgK := \{hgk : h \in H \text{ et } k \in K\}$
 \end{enumerate}
-$\diamond$ \textbf{$HgK$ est l'union d'exactement $[H: xHx^{-1}]$ cosets gauches de $K$}
+$\diamond$ \textbf{$HgK$ est l'union d'exactement $[H: H\cap xKx^{-1}]$ cosets gauches de $K$}
+\\
+\\
+Car supposons $g \in G$ quelconque et $h_1, h_2, \cdots h_n$ les éléments de $H$. Alors $HgK = h_1 g K \cup h_2 g K \cup \cdots \cup h_n g K$.
+\\
+\\
+Or, soit $h_i, h_j$ tel que $h_i g K = h_j g K$. Alors $h_i^{-1}h_j g K = g K$ et donc $h_i^{-1}h_j g \in gK$. Alors $h_i^{-1} h_j \in gKg^{-1}$.
+\\
+\\
+Mais $h_i^{-1}h_j \in H$ et donc $h_i^{-1}h_j \in H \cap g K g^{-1}$ ssi $h_j \in h_i^{-1}(H \cap gKg^{-1})$.
+\\
+\\
+Donc $h_j g K = h_i g K$ ssi $h_j, h_i$ sont dans le même coset gauche de $H \cap gKg^{-1}$. Puisqu'il existe $[H:H\cap gKg^{-1}]$ 
+cosets gauche de ce sous-groupe, on peut déduire $HgK = h_1 g K \cup \cdots \cup h_n g K = h_{i_1} g K \cup \cdots \cup h_{i_{[H:H\cap gKg^{-1}]}} g K$.
+
+\section*{10.21 : Groupe d'ordre 77}
+\begin{enumerate}
+ \item $G$ un groupe d'ordre 77
+\end{enumerate}
+$\diamond$ \textbf{Il existe $a,b \in G$ tel que $o(a) = 11$ et $o(b) = 7$.}
+\\
+\\
+Puisque les facteurs de 77 sont 1,7,11, on a que tout élément de $G$ doit être de cet ordre (\textbf{thm. 10.4}). Or, puisque le
+seul élément d'ordre 1 est l'identité, il doit exister un élément d'ordre 7 ou un élément d'ordre 11. 
+\\
+\\
+Supposons qu'il n'existe pas d'élément d'ordre 11. Alors il existe 76 éléments d'ordre 7. Soit alors $a \not = e$ de $G$. Le sous-groupe
+$<a>$ d'ordre 7 est cyclique (\textbf{thm. 10.5}) et doit comprendre 6 éléments dinstincts de $G$. Soit alors $b \not \in <a>$. Alors de même
+$<b>$ comprends 6 éléments de $G$ qui ne sont pas dans $<a>$ (\textbf{Deux sous-groupes cyclique d'ordre premier doivent être disjoints}).
+\\
+\\
+En répétant la procédure pour 12 éléments, on obtient 73 éléments compris dans tous les sous-groupes (\textbf{les éléments distincts 
+et l'identité}. Il reste donc 4 éléments d'ordre 7. Mais alors les sous-groupes générés par ceux-ci doivent avoir des éléments en communs avec
+ceux générés précédemment, ce qui est absurde. 
+\\
+\\
+On peut de même supposer qu'il n'existe que des éléments d'ordre 11, pour finalement obtenir 6 éléments en reste après une décomposition en sous-groupes
+cycliques d'ordre 11.
+
+\section*{10.22}
+\begin{enumerate}
+ \item $G$ un groupe fini tel que $(xy)^3 = x^3 y^3$ pour tout $x,y \in G$
+ \item $3 \not | o(G)$
+\end{enumerate}
+\subsection*{a)}
+$\diamond$ \textbf{$G$ est abelien.}
+\\
+\\
+Car $\forall a,b \in G \quad (ab)^2 = b^2a^2$. En effet, $(ba)^3 = b^3 a^3 = bababa$. Alors $b^2 a^2 = abab = (ab)^2$.
+\\
+\\
+Aussi, puisque $3 \not | o(G)$, alors $o(G) = 3k + r$ pour un certain $k \in \mathbb{N}$ et $r \in \{1,2\}$.
+\\
+\\
+Puisque $a^{o(G)} = e$, alors $a^{3k} = a^{-r}$. On a aussi que $(aba^{-1})^3 = a^3b^3 \Leftrightarrow ab^3a^{-1} = a^3b^3a^{-3} 
+\Leftrightarrow b^3a^2 = a^2b^3$.
+\\
+\\
+Par conséquent, pour tout $b \in G$, $(b^{-k})^3 a^2 = b^r a^2 = a^2 b^r$.
+\\
+\\
+Supposons que $r =1$. Alors on considère $a,b \in G$ et l'on a $a^2 b^2 = b^2 a^2$. Alors 
+$(ab)^2 = b^2 a^2 = abab = a^2 b^2$. Or $a^2 b^2 = abab \Leftrightarrow ab = ba$.
+\\
+\\
+Si $r = 2$, alors on a encore $a^2 b^2 = b^2 a^2$.
+
+\section*{10.24}
+\begin{enumerate}
+ \item $\exists g \in G$ tq $Z(g) = Z(G)$
+\end{enumerate}
+$\diamond$ \textbf{$G$ est abelien}
+\\
+\\
+Car $g \in Z(g)$ et donc $g \in Z(G)$, c'est-à-dire que $g$ commute avec tous les éléments de $G$.
+\\
+\\
+Mais alors $Z(g) = G$. Or $Z(g) = Z(G)$. 
+
+\section*{10.27}
+\begin{enumerate}
+ \item $G$ un groupe fini
+\end{enumerate}
+$\diamond$ \textbf{$[G:Z(G)]$ ne peut pas être premier}
+\\
+\\
+On considère $|G| = |Z(G)| + [G:Z(a_1)] + \cdots + [G:Z(a_k)]$. Alors $[G:Z(a_i)] > 1$ pour tout $i$ (\textbf{class equation}).
+\\
+\\
+Or, on a que $Z(G) \subseteq Z(a_i)$ pour tout $i$ car $z \in Z(G) \Rightarrow za_i = a_iz$ (\textbf{def.}). Or puisque $Z(G)$
+est fermé sous son opération de composition, $Z(G)$ est un sous-groupe de $Z(a_i)$ (\textbf{thm. 5.3}). Donc $|Z(G)|$ divise $|Z(a_i)|$ 
+(\textbf{Lagrange}). 
+\\
+\\
+On a donc que $[G:Z(G)] = [G:Z(a_i)][Z(a_i):Z(G)]$ (\textbf{ex. 10.15}). Soit alors $[G:Z(G)] = p$ premier.
+\\
+\\
+On a $[G:Z(a_i)] \not = 1$ car $[G:Z(a_i)] > 1$ (\textbf{ci-haut}). Donc $[Z(a_i):Z(G)] = 1$ et  $[G:Z(a_i)] = p$. 
+Mais $[Z(a_i):Z(G)] = 1$ implique que $|Z(G)| = |Z(a_i)|$ et donc $Z(G) = Z(a_i)$ (\textbf{$Z(G) \subseteq Z(a_i)$ groupes finis}). 
+Mais alors $G$ est abelien (\textbf{ex. 10.24}) et donc $[G:Z(G)] = 1$, une contradiction.
+
+\section*{10.28}
+\begin{enumerate}
+ \item $p$ un nombre premier
+ \item $n$ un entier positif
+ \item $G$ un groupe tq $|G| = p^n$
+\end{enumerate}
+$\diamond$ \textbf{Utiliser la class equation pour montrer que $p$ divise $|Z(G)|$}
+\\
+\\
+Car on ré-arrange la class equation pour montrer
+\begin{align*}
+ p(p^{n-1} + \sum_{i=1}^k p^{n-1} |Z(a_i)|^{-1}) = |Z(G)|
+\end{align*}
+On a que $p^{n-1}$ est un entier. De plus, pour tout $i$, $|Z(a_i)|$ divise $p^{n-1}$. (\textbf{Je peux le montrer sans invoquer 
+le thm. fond. de l'artihmétique, mais c'est fastidieu et, si je l'invoque, alors je prouve également que $|Z(G)|$ est divisible par $p$}.) 
+
+\section*{10.29}
+\begin{enumerate}
+ \item $p$ premier
+ \item $G$ un groupe tel que $|G| = p^2$
+\end{enumerate}
+$\diamond$ \textbf{$G$ est abelien}
+\\
+\\
+Par \textbf{ex. 10.28}, $p$ divise $|Z(G)|$. Donc $|Z(G)| \in \{p,p^2\}$. Or $[G:Z(G)]$ n'est pas premier par \textbf{ex. 10.27},
+donc $|Z(G)| \not = p$, donc est égal à $p^2$. Mais alors $G = Z(G)$ et donc $G$ est abelien.
+
+\section*{10.30}
+\begin{enumerate}
+ \item $G$ un groupe fini non abelien
+ \item $p$ un nombre premier
+ \item $p$ divise $G$
+\end{enumerate}
+$\diamond$ \textbf{Il existe un $b \in G$ tel que $b \not \in Z(G)$ et $p$ divise $Z(b)$}
+\\
+\\
+Si $p$ divise $|Z(G)|$, on a finit car $|Z(G)|$ est un sous-groupe de $Z(a) \forall a \in G$. Soit alors $p$ qui ne divise pas $|Z(G)|$. 
+\\
+\\
+Supposons de plus que $p$ ne divise pas $|Z(a)|$ pour tout $a \in G$. Alors $[G|:Z(a)] = \dfrac{|G|}{|Z(a)|} = \dfrac{dp}{|Z(a)|}$ et 
+l'on peut conclure que $|Z(a)|$ divise $d$ pour tout $a$ (\textbf{pgdc($p,|Z(a)|=1$) et thm 4.3}).
+\\
+\\
+Alors, par la \textbf{class equation}, on a
+\begin{align*}
+ & pd = |Z(G)| + p\sum_{i=1}^k \frac{d}{|Z(a_i)|} \\
+ \Leftrightarrow \\
+ & p(d - \sum_{i=1}^k \frac{d}{|Z(a_i)|}) = |Z(G)|
+\end{align*}
+et donc $p$ divise $|Z(G)|$, contrairement à ce que l'on avait supposé.
+
+\section*{10.31}
+\begin{enumerate}
+ \item $p$ un nombre premier
+ \item $n \in \mathbb{N}$
+ \item $G$ un groupe tel que $|G| = p^n$
+ \item $H$ un sous-groupe d'ordre $p$ tel que $\forall g \in G h \in H ghg^{-1} \in H$
+ \item $|H|$ divise $|Z(G)|$
+\end{enumerate}
+$\diamond$ \textbf{$H \subseteq Z(G)$}
+\\
+\\
+Premièrement, puisque $H$ est d'ordre $p$ on a que $H$ est cyclique et abelien. 
+\\
+\\
+Supposons alors $g \in G$ et $h \in H$. Alors 
+\begin{align*}
+& (ghg^{-1})(g^{-1}hg) = (g^{-1}hg)(ghg^{-1}) \\
+\Leftrightarrow \\
+& ghg^{-2}hg = g^{-1}hg^2hg^{-1} \\
+\Leftrightarrow \\
+& g^2h(g^{-2}hg^2) = hg^2h \\ 
+\Leftrightarrow \\
+& (g^{-2}hg^2)g^2h = hg^2h  \\
+\Leftrightarrow \\
+& g^{-2}hg^4h = hg^2h \\
+\Leftrightarrow \\
+& g^{-2}hg^4 = hg^2 \\
+\Leftrightarrow \\
+& hg^2 = g^2h
+\end{align*}
+Supposons alors $p \not = 2$. Alors tous les membres de $G$ divisent $p^n$ (\textbf{thm. 10.4}) et donc $o(g) = p^i$ pour $i \in \{1 \cdots n\}$
+, ie. $o(g)$ est impair (\textbf{thm. 4.3}). 
+\\
+\\
+Soit alors $g$ un élément de $G$. Alors $<g>$ est un sous-groupes de $G$ (\textbf{thm. 5.3}). Alors je dis qu'il existe un $b$ de $<g>$ tel que 
+$b^2 = g$. Car $o(g) = 2k + 1$ (\textbf{Euclide}). Alors $k = \frac{o(g)-1}{2}$. Or, puisque $g^{-k} \in <g>$, on a $(g^{-k})^2 = g^{-2k} = g^{1-o(g)} = g$.
+\\
+\\
+On a donc montré que tout élément d'ordre impair $g$ possède un "racine carrée" $b$ tq $b^2 = g$. Mais on a montré plus haut 
+que $hg^2 = g^2h$ pour tout $h \in H$. Donc si $p \not = 2$, $H \subseteq Z(G)$. 
+\\
+\\
+Soit alors $p = 2$. Alors $|H| = \{e,h\}$ (\textbf{$|H| = p$ hyp.}). Or $\forall g\in G \quad ghg^{-1} \in H$ (\textbf{hyp.}). 
+Alors $ghg^{-1} = e \Leftrightarrow gh = g \Leftrightarrow h = e$, une contradiction. Alors $ghg^{-1} = h \Leftrightarrow gh = hg$ et ce pour tout
+$g$. Donc $h \in Z(G)$ et donc $H \subseteq Z(G)$.
+
+\section*{10.32}
+\begin{enumerate}
+ \item $G$ un groupe
+ \item $X$ un ensemble
+ \item $F:G \times X \rightarrow X$ une action à gauche sur $X$ (où $g\cdot x := F(g,x))$
+ \item $orb(x) := \{g\cdot x : g \in G\}$
+ \item $G_x := \{g \in G : g \cdot x = x\}$
+\end{enumerate}
+\subsection*{a)}
+\begin{enumerate}
+ \item $R \subseteq X \times X$ une relation tq $x_1Rx_2$ ssi $\exists g\in G$ tq $x_1 = g \cdot x_2$
+\end{enumerate}
+$\diamond$ \textbf{$R$ est une relation d'équivalence sur $X$}
+\\
+\\
+\textbf{Trivial}
+\subsection*{b)}
+$\diamond$ \textbf{$G_x$ est un sous-groupe de $G$}
+\\
+\\
+\textbf{Trivial}
+\subsection*{c)}
+$\diamond$ \textbf{$|orb(x)| = [G:G_x]$}
+\\
+\\
+On définit $f: orb(x) \rightarrow \{gG_x : g \in G\}$ par $f(x) = gG_x$ où $g\cdot x = y \in orb(x)$. On montre d'abord que cette
+fonction est bien définie.
+\\
+\\
+Car soit $y \in orb(x)$ tq $g_1 x = y = g_2 x$ pour $g_1 \not = g_2$. Alors on a que $g_2^{-1}g_1 = x$, c-à-d que $g_2^{-1}g_1 \in G_x
+\Leftrightarrow g_2^{-1}g_1 G_x = G_x \Leftrightarrow g_1G_x = g_2G_x$ (\textbf{cor. 9.4}). La fonction est donc bien définie.
+\\
+\\
+Or, il est clair que la fonction est surjective, puisque pour tout $gG_x$, $g\cdot x \in orb(x)$ (\textbf{def. $orb(x)$}). 
+\\
+\\
+De plus, si $f(y) = f(z)$, alors il existe $g_1 x = z$ et $g_2 x = y$ tel que $g_1G_x = g_2G_x \Leftrightarrow g_2^{-1}g_1G_x = G_x \Leftrightarrow
+ g_2^{-1}g_1 \cdot x = x \Leftrightarrow g_1 \cdot x = g_2 \cdot x$ et donc la fonction est injective (\textbf{cor. 9.4}).
+ 
+\section*{10.33}
+\begin{enumerate}
+ \item $G$ un groupe fini
+ \item $X$ un ensemble fini
+ \item $\cdot$ une action à gauche de $G$ sur $X$
+ \item $X_g := \{x \in X : g \in G_x \}$
+ \item $N$ le nombre d'orbites distinctes de $X$ sous l'action $\cdot$ de $G$
+\end{enumerate}
+$\diamond$ \textbf{$N=\dfrac{1}{|G|}\sum_{g\in G}|X_g|$}
 
 \end{document}
 
