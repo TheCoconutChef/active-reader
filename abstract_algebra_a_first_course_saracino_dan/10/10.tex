@@ -410,7 +410,7 @@ Si $p$ divise $|Z(G)|$, on a finit car $|Z(G)|$ est un sous-groupe de $Z(a) \for
 \\
 \\
 Supposons de plus que $p$ ne divise pas $|Z(a)|$ pour tout $a \in G$. Alors $[G|:Z(a)] = \dfrac{|G|}{|Z(a)|} = \dfrac{dp}{|Z(a)|}$ et 
-l'on peut conclure que $|Z(a)|$ divise $d$ pour tout $a$ (\textbf{pgdc($p,|Z(a)|=1$) et thm 4.3}).
+l'on peut conclure que $|Z(a)|$ divise $d$ pour tout $a$ (\textbf{pgdc$(p,|Z(a)|)=1$ et thm 4.3}).
 \\
 \\
 Alors, par la \textbf{class equation}, on a
@@ -459,7 +459,7 @@ Soit alors $g$ un élément de $G$. Alors $<g>$ est un sous-groupes de $G$ (\tex
 $b^2 = g$. Car $o(g) = 2k + 1$ (\textbf{Euclide}). Alors $k = \frac{o(g)-1}{2}$. Or, puisque $g^{-k} \in <g>$, on a $(g^{-k})^2 = g^{-2k} = g^{1-o(g)} = g$.
 \\
 \\
-On a donc montré que tout élément d'ordre impair $g$ possède un "racine carrée" $b$ tq $b^2 = g$. Mais on a montré plus haut 
+On a donc montré que tout élément d'ordre impair $g$ possède une "racine carrée" $b$ tq $b^2 = g$. Mais on a montré plus haut 
 que $hg^2 = g^2h$ pour tout $h \in H$. Donc si $p \not = 2$, $H \subseteq Z(G)$. 
 \\
 \\
@@ -515,6 +515,35 @@ De plus, si $f(y) = f(z)$, alors il existe $g_1 x = z$ et $g_2 x = y$ tel que $g
  \item $N$ le nombre d'orbites distinctes de $X$ sous l'action $\cdot$ de $G$
 \end{enumerate}
 $\diamond$ \textbf{$N=\dfrac{1}{|G|}\sum_{g\in G}|X_g|$}
-
+\\
+\\
+\textbf{Car premièrement, que $\sum_{g\in G} |X_g| = |\{(g,x) : g\cdot x = x\}| = \sum_{x\in X }|G_x|$}
+\\
+\\
+On pose $G_{(g,x)} := \{(g,x) : g \in G_x\}$. Alors $|G_{(g,x)}| = |G_x|$. 
+\\
+\\
+Car soit $\phi : G_{(g,x)} \rightarrow G_x$ définie par $\phi(g,x) = g$. Alors $\phi$ et évidemment bijective (\textbf{s.d.}). 
+\\
+\\
+De plus, soit $x_1 \not = x_2$. Alors $G_{(g,x_1)} \cap G_{(g,x_2)} = \emptyset$ (\textbf{car sinon $x_1 = x_2$}).
+Donc les $G_{(g,x)}$ sont deux à deux disjoints et donc $\sum_{x \in X} |G_x| = \sum_{x\in X} |G_{(g,x)}|$. 
+\\
+\\
+On a de plus que $\bigcup_{x \in X} G_{(g,x)} = \{(g,x) : g\cdot x = x\}$. Car $G_{(g,x)} \subset \{(g,x) : g \cdot x = x\}$ (\textbf{def.}).
+Soit alors $(g,x) \in \{(g,x) : g\cdot x = x\}$. Alors $g \in G_x$. Donc $(g,x) \in G_{(g,x)}$. 
+\\
+\\
+On a donc que $\{(g,x) : g\cdot x = x\} = \bigcup_{x \in X} G_{(g,x)}$. Alors $|\{(g,x):g \cdot x = x\}| = |\bigcup_{x \in X} G_{(g,x)}|
+= \sum_{x \in X} |G_{(g,x)}| = \sum_{x \in X} |G_x|$ par ce qui fût montré plus haut.
+\\
+\\
+On posant $X_{(g,x)} := \{(g,x) : g \cdot x = x\}$, on a un raisonnement parfaitement analogue. 
+\\
+\\
+On a alors que, pour une orbite $orb(y)$ quelconque, $\sum_{x\in orb(y)}|G_x| = \sum_{x\in orb(y)}\frac{|G|}{|orb(y)|} = |G|$ (\textbf{ex. 10.32-c}).
+\\
+\\
+Puisque les orbites partitionnent $X$, le résultat suit.
 \end{document}
 
